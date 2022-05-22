@@ -1,0 +1,52 @@
+﻿@model MVC_Dashboard_Northwind.Models.Supplier
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-header">
+    <h3>Bu alanı sadece admin görebilir</h3>
+</div>
+
+
+<div class="card-body">
+    <a class="btn btn-info float-end ms-3" href="/supplier/addsupplier">Add Supplier</a>
+
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>SupplierID</th>
+                <th>CompanyName</th>
+                <th>ContactName</th>
+                <th>ContactTitle</th>
+                <th>Country</th>
+
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var supplier in ViewBag.Suppliers)
+            {
+                <tr>
+                    <td>@supplier.SupplierID</td>
+                    <td>@supplier.CompanyName</td>
+                    <td>@supplier.ContactName</td>
+                    <td>@supplier.ContactTitle</td>
+                    <td>@supplier.Country</td>
+
+
+                    <td>@Html.ActionLink("Guncelle", "UpdateSupplier", new { id = supplier.SupplierID }, new { @class = "btn btn-warning" })</td>
+                    <td>@Html.ActionLink("Sil", "DeleteSupplier", new { id = supplier.SupplierID }, new { @class = "btn btn-danger" })</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+

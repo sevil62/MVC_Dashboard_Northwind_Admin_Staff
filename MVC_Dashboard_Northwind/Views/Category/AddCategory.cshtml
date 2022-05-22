@@ -1,0 +1,42 @@
+﻿@model MVC_Dashboard_Northwind.Models.Category
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="card-header">
+            <a class="btn btn-warning float-end ms-3" href="/category/index">Category</a>
+            Category Add
+        </div>
+
+
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddCategory", "Category", FormMethod.Post))
+            {
+                <div>
+                    <label>CategoryID</label>
+                    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>CategoryName</label>
+                    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>Supplier</label>
+                    @Html.TextBoxFor(x => x.Description, new { @class = "form-control" })
+                </div>
+               
+                <br />
+
+                <button type="submit">Add Category</button>
+            }
+        </div>
+    </div>
+
+</div>
+

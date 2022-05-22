@@ -1,0 +1,48 @@
+﻿@model MVC_Dashboard_Northwind.Models.Order_Detail
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="card-header">
+    <h3>Bu alanı sadece admin görebilir</h3>
+</div>
+
+
+<div class="card-body">
+    <a class="btn btn-info float-end ms-3" href="/category/addcategory">Add OrderDetail</a>
+
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>OrderID</th>
+                <th>ProductName</th>
+                <th>UnitPrice</th>
+               
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var orderDeteail in ViewBag.OrderDetails )
+            {
+                <tr>
+                    <td>@orderDeteail.OrderID</td>
+                    <td>@orderDeteail.Product.ProductName</td>
+                    <td>@orderDeteail.UnitPrice</td>
+                    
+
+                    <td>@Html.ActionLink("Guncelle", "UpdateOrderDetail", new { id = orderDeteail.OrderID }, new { @class = "btn btn-warning" })</td>
+                    <td>@Html.ActionLink("Sil", "DeleteOrderDetail", new { id = orderDeteail.OrderID }, new { @class = "btn btn-danger" })</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+
+

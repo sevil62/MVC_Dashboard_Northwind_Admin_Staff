@@ -1,0 +1,47 @@
+﻿@model MVC_Dashboard_Northwind.Models.Supplier
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="card-header">
+            <a class="btn btn-warning float-end ms-3" href="/supplier/index">Supplier</a>
+            Supplier Add
+        </div>
+
+
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddSupplier", "Supplier", FormMethod.Post))
+            {
+                <div>
+                    <label>SupplierID</label>
+                    @Html.TextBoxFor(x => x.SupplierID, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>CompanyName</label>
+                    @Html.TextBoxFor(x => x.CompanyName, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>ContactName</label>
+                    @Html.TextBoxFor(x => x.ContactName, new { @class = "form-control" })
+                </div>
+                <div>
+                    <label>Country</label>
+                    @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                </div>
+
+                <br />
+
+                <button type="submit">Add Supplier</button>
+            }
+        </div>
+    </div>
+
+</div>
+
+

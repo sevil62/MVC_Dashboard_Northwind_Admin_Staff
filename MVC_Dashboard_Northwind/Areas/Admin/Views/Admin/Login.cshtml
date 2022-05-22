@@ -1,0 +1,35 @@
+﻿@model MVC_Dashboard_Northwind.VMClasses.AppUserVM
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h2>Giriş Yap</h2>
+            </div>
+            <div class="card-body">
+                @if (TempData["error"] != null)
+                {
+                    <h2>@TempData["error"]</h2>
+                }
+                <form method="post">
+                    <div>
+                        <label>Username:</label>
+                        @Html.ValidationMessageFor(x => x.UserName)
+                        @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+                    </div>
+                    <div>
+                        <label>Password:</label>
+                        @Html.ValidationMessageFor(x => x.Password)
+                        @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-info">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

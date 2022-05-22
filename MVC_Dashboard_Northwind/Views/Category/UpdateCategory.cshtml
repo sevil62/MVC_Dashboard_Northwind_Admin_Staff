@@ -1,0 +1,32 @@
+﻿@model MVC_Dashboard_Northwind.Models.Category
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/category/index">Category</a>
+    Category Update
+</div>
+
+
+<div class="card-body">
+    <form method="post">
+
+        <label>CategoryID</label>
+        <input type="text" class="form-control" />
+
+        <label>Category Name</label>
+        <input type="text" class="form-control" />
+
+        <label>Description</label>
+        <input type="text" class="form-control" />
+
+        <br />
+
+        <button type="submit">Category </button>
+    </form>
+
+</div>

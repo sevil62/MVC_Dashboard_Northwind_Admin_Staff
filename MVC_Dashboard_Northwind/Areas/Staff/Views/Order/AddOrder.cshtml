@@ -1,0 +1,52 @@
+﻿@model MVC_Dashboard_Northwind.Models.Order
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="card-header">
+            <a class="btn btn-warning float-end ms-3" href="/order/index">Order</a>
+            Order Add
+        </div>
+
+
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddOrder", "Order", FormMethod.Post))
+            {
+                <div>
+                    <label>OrderID</label>
+                    @Html.TextBoxFor(x => x.OrderID, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>CustomerID</label>
+                    @Html.TextBoxFor(x => x.CustomerID, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>EmployeeID</label>
+                    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control" })
+                </div>
+                <div>
+                    <label>ShipName</label>
+                    @Html.TextBoxFor(x => x.ShipName, new { @class = "form-control" })
+                </div>
+
+                <div>
+                    <label>ShipCity</label>
+                    @Html.TextBoxFor(x => x.ShipCity, new { @class = "form-control" })
+                </div>
+
+                <br />
+
+                <button type="submit">Add Order</button>
+            }
+        </div>
+    </div>
+
+</div>
+
+

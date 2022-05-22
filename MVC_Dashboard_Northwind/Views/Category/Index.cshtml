@@ -1,0 +1,47 @@
+﻿@model MVC_Dashboard_Northwind.Models.Category
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-info float-end ms-3" href="/category/addcategory">Add Category</a>
+
+</div>
+<div class="card-body">
+    <table id="datatablesSimple">
+        <thead>
+            <tr>
+                <th>CategoryId</th>
+                <th>CategoryName</th>
+                <th>Description</th>
+                
+                <th></th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in ViewBag.Categories)
+            {
+                <tr>
+                    <td>@category.CategoryID</td>
+
+                    <td>@category.CategoryName</td>
+                   
+                    <td>@category.Description</td>
+                    
+
+                    <td>@Html.ActionLink("Guncelle", "UpdateCategory", new { id = category.CategoryID }, new { @class = "btn btn-warning" })</td>
+                    <td>@Html.ActionLink("Sil", "DeleteCategory", new { id = category.CategoryID }, new { @class = "btn btn-danger" })</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+
+

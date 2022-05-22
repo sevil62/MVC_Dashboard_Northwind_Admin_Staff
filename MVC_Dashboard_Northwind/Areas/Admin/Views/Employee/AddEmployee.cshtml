@@ -1,0 +1,47 @@
+﻿@model MVC_Dashboard_Northwind.Models.Employee
+@{
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <div class="row">
+        <div class="card-header">
+            <a class="btn btn-warning float-end ms-3" href="/employee/index">Employee</a>
+            Employee Add
+        </div>
+        
+
+        <div class="card-body">
+
+            @using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post))
+            {
+                <div>
+                    <label>EmployeeID</label>
+                    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>FirstName</label>
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control" })
+                </div>
+                <br />
+                <div>
+                    <label>LastName</label>
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control" })
+                </div>
+                <div>
+                    <label>Title</label>
+                    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                </div>
+
+                <br />
+
+                <button type="submit">Add Employee</button>
+            }
+        </div>
+    </div>
+
+</div>
+
+

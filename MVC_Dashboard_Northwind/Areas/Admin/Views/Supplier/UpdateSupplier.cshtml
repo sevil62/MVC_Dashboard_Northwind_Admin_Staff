@@ -1,0 +1,34 @@
+﻿@model MVC_Dashboard_Northwind.Models.Supplier
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="card-body">
+    <a class="btn btn-warning float-end ms-3" href="/supplier/index">Supplier</a>
+    Supplier Update
+</div>
+
+
+<div class="card-body">
+    <form method="post">
+
+        <label>SupplierID</label>
+        <input type="text" class="form-control" />
+
+        <label>Company Name</label>
+        <input type="text" class="form-control" />
+
+        <label>Contact Name</label>
+        <input type="text" class="form-control" />
+
+        <label>Country</label>
+        <input type="text" class="form-control" />
+        <br />
+
+        <button type="submit">Supplier</button>
+    </form>
+
+</div>
